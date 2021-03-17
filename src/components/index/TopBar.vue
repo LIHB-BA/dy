@@ -38,7 +38,9 @@ export default {
         color:#cccccc;
         padding:20px;
         display:flex;
-        box-sizing: border-box;
+        justify-items: center;
+        z-index: 999;
+        /* box-sizing: border-box; */
     }
     .left,.right{
         width:20%;

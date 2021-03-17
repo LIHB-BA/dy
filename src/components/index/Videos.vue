@@ -11,6 +11,7 @@
 import { videoPlayer } from 'vue-video-player'
 export default {
     name:"Videos",
+    props:['videoList'],
     data(){
         return{
             playerOptions : {
@@ -21,7 +22,7 @@ export default {
                 fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
                 sources: [
                     {
-                        src: 'http://video.jishiyoo.com/161b9562c780479c95bbdec1a9fbebcc/8d63913b46634b069e13188b03073c09-d25c062412ee3c4a0758b1c48fc8c642-ld.mp4',  // 路径
+                        src: this.videoList.url,  // 路径
                         type: 'video/mp4'  // 类型
                     }, 
                 ],
@@ -40,11 +41,17 @@ export default {
     .videos{
         position:relative;
     }
-    .videos .vis-custom-skin > .video-js .vjs-big-play-button{
+    .videos .vis-custom-skin >.video-js .vjs-big-play-button{
         background: rgba(0,0,0,0.4);
         font-size: 30px;
         border-radius: 50%;
         width: 40px;
         height:40px;
+        line-height: 40px;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
     }
+
 </style>
