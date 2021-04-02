@@ -39,7 +39,6 @@ export default {
         padding:20px;
         display:flex;
         justify-items: center;
-        z-index: 999;
         /* box-sizing: border-box; */
     }
     .left,.right{
